@@ -8,424 +8,540 @@
     <meta name="description" content="Documentação oficial do token Systal Coin (SYST), incluindo guias, especificações e informações técnicas.">
     <meta name="keywords" content="Systal Coin, SYST, Token, Criptomoeda, Blockchain, Wiki, Documentação">
     <meta name="author" content="Ecosystal">
-    <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-    <link rel="shortcut icon" href="/assets/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="assets/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="shortcut icon" href="assets/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Systal Coin Wiki" />
-    <link rel="manifest" href="/assets/site.webmanifest" />
+    <link rel="manifest" href="assets/webmanifest" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" media="all" />
     <link rel="stylesheet" href="assets/style.css" media="all" />
+
 </head>
-<link rel="stylesheet" href="assets/style.css" media="all" />
 
-<div id="top-bar">
-    <h1>Systal Coin ( SYST ) - Docs</h1>
+<body>
+
+<div class='dashboard'>
+    <div class="dashboard-nav">
+        <header>
+            <a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a>
+            <a href="#" class="brand-logo notranslate">
+                <img class="logo" src="assets/favicon.svg" alt="token"><span>Systal Coin Wiki</span>
+            </a>
+        </header>
+        <nav class="dashboard-nav-list">
+            <a href="#introducao" class="dashboard-nav-item">
+                <i class="fas fa-book"></i> Introdução
+            </a>
+
+            <div class="dashboard-nav-dropdown">
+                <a href="#token" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                    <i class="fas fa-cube"></i> Token
+                </a>
+                <div class="dashboard-nav-dropdown-menu">
+                    <a href="#nome-simbolo-supply" class="dashboard-nav-dropdown-item">Nome, símbolo e supply</a>
+                    <a href="#mint" class="dashboard-nav-dropdown-item">Mint</a>
+                    <a href="#burn" class="dashboard-nav-dropdown-item">Burn</a>
+                    <a href="#resgate" class="dashboard-nav-dropdown-item">Resgate</a>
+                </div>
+            </div>
+
+            <div class="dashboard-nav-dropdown">
+                <a href="#contrato" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                    <i class="fas fa-cogs"></i> Contrato Inteligente
+                </a>
+                <div class="dashboard-nav-dropdown-menu">
+                    <a href="#auditoria-boas-praticas" class="dashboard-nav-dropdown-item">Auditoria</a>
+                    <a href="#funcoes-adm" class="dashboard-nav-dropdown-item">Funções administrativas</a>
+                    <a href="#protecao-implementada" class="dashboard-nav-dropdown-item">Proteções implementadas</a>
+                    <a href="#codigo-verificacoes" class="dashboard-nav-dropdown-item">Código fonte e verificações</a>
+                </div>
+            </div>
+
+            <div class="dashboard-nav-dropdown">
+                <a href="#tokenomics" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                    <i class="fas fa-puzzle-piece"></i> Tokenomics
+                </a>
+                <div class="dashboard-nav-dropdown-menu">
+                    <a href="#percentuais-distribuicao" class="dashboard-nav-dropdown-item">Percentuais de distribuição</a>
+                    <a href="#modelos-utilidade" class="dashboard-nav-dropdown-item">Modelos de utilidade</a>
+                </div>
+            </div>
+
+            <div class="dashboard-nav-dropdown">
+                <a href="#seguranca" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                    <i class="fas fa-shield-alt"></i> Segurança
+                </a>
+                <div class="dashboard-nav-dropdown-menu">
+                    <a href="#controle-acesso" class="dashboard-nav-dropdown-item">Controle de acesso</a>
+                    <a href="#pause-whitelist-antibot" class="dashboard-nav-dropdown-item">Pause, whitelist, anti-bot</a>
+                    <a href="#recover-tokens" class="dashboard-nav-dropdown-item">recoverTokens / fallback</a>
+                </div>
+            </div>
+
+            <div class="dashboard-nav-dropdown">
+                <a href="#lancamento" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                    <i class="fas fa-rocket"></i> Lançamento
+                </a>
+                <div class="dashboard-nav-dropdown-menu">
+                    <a href="#estrategia-marketing" class="dashboard-nav-dropdown-item">Estratégia de marketing</a>
+                </div>
+            </div>
+
+            <div class="dashboard-nav-dropdown">
+                <a href="#relatorios" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                    <i class="fas fa-chart-bar"></i> Relatórios
+                </a>
+                <div class="dashboard-nav-dropdown-menu">
+                    <a href="#transparencia-carteiras" class="dashboard-nav-dropdown-item">Transparência de carteiras</a>
+                </div>
+            </div>
+
+            <a href="#links-uteis" class="dashboard-nav-item">
+                <i class="fas fa-link"></i> Links úteis
+            </a>
+        </nav>
+    </div>
+    <div class='dashboard-app'>
+        <header class="dashboard-toolbar systal-header">
+            <div class="header-left">
+                <a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a>
+                <a href="#" class="brand-logo d-mobile notranslate">
+                    <img class="logo" src="assets/favicon.svg" alt="token">
+                    <span>Systal Coin</span>
+                </a>
+            </div>
+            <div class="header-right">
+                <div id='google_translate_element'></div>
+            </div>
+        </header>
+
+        <div class='dashboard-content'>
+            <div class='container'>
+
+                <div id="introducao" class='card'>
+                    <div class='card-header'>
+                        <h1>🧱 Introdução</h1>
+                    </div>
+                    <div class='card-body'>
+                            <p>A <strong>Systal Coin</strong> é uma criptomoeda BEP20 focada em transparência, segurança e utilidade no ecossistema BNB Smart Chain. Esta wiki cobre os principais aspectos do projeto.</p>
+                    </div>
+                </div>
+
+                <div id="sobre-projeto" class='card'>
+                    <div class='card-header'>
+                        <h1>Sobre o projeto</h1>
+                    </div>
+                    <div class='card-body'>
+                        <p>
+                            O <strong>Systal Coin</strong> é um token digital criado para ser o pilar de um ecossistema moderno, seguro e transparente. Desenvolvido com base nas melhores práticas de contratos inteligentes, o projeto combina funcionalidades robustas como controle de acesso, proteção anti-bot, auditoria pública e distribuição bem definida — oferecendo um ambiente confiável tanto para usuários quanto para desenvolvedores.
+                        </p>
+                        <p>
+                            Comprometido com responsabilidade e conformidade, o <strong>Systal Coin</strong> adota código aberto documentado com <code>NatSpec</code>, verificação completa em block explorers como o BscScan, e mecanismos claros de governança. Essa estrutura garante que cada movimentação e atualização possa ser auditada pela comunidade, reforçando a transparência e a segurança do projeto.
+                        </p>
+                        <p>
+                            Um dos principais focos do <strong>Systal Coin</strong> é a usabilidade: foi projetado para funcionar de forma fluida nas carteiras mais populares, como MetaMask, Trust Wallet, SafePal, bem como em hardware wallets como Trezor e Ledger. Além disso, ele é compatível com diversas exchanges descentralizadas (DEX), proporcionando liberdade para que os usuários interajam com o ecossistema sem barreiras técnicas ou dependência de plataformas centralizadas.
+                        </p>
+                        <p>
+                            Mais do que um ativo digital, o <strong>Systal Coin</strong> é uma infraestrutura de utilidade. Ele permite participação em programas de benefícios, bonificações, acesso a serviços e recompensas dentro do ecossistema, além de oferecer voz ativa à comunidade de holders. Seu design evita abusos e incentiva um crescimento sustentável, sendo cuidadosamente arquitetado para equilibrar inovação com proteção aos usuários.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="token" class='card'>
+                    <div class='card-header'>
+                        <h1>Token SYST</h1>
+                    </div>
+                    <div class='card-body'>
+                        <p>Detalhes técnicos e funcionais do token SYST.</p>
+                    </div>
+                </div>
+
+                <div id="nome-simbolo-supply" class='card'>
+                    <div class='card-header'>
+                        <h1>Systal Coin</h1>
+                    </div>
+                    <div class='card-body'>
+                        <table border="0" cellpadding="4" cellspacing="0">
+                            <tr>
+                                <td><strong>ICON:</strong></td>
+                                <td><img class="logo" src="assets/favicon.svg" alt="token"></td>
+                            </tr><tr>
+                                <td><strong>Nome:</strong></td>
+                                <td>Systal Coin</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Símbolo:</strong></td>
+                                <td>SYST</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Supply Máximo:</strong></td>
+                                <td>100.000.000 SYST</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="mint" class='card'>
+                    <div class='card-header'>
+                        <h1>Mint</h1>
+                    </div>
+                    <div class='card-body'>
+                        <p>
+                            O contrato do <strong>Systal Coin</strong> utiliza um <strong>modelo de mint travado e controlado</strong> para garantir segurança e transparência na emissão de novos tokens.
+                        </p>
+                        <ul>
+                            <li><strong>🧷 Cunhagem única:</strong> O mint só pode ser realizado uma única vez por meio da função <code>mintInitialSupply()</code>, disponível apenas ao <code>owner</code>.</li>
+                            <li><strong>📦 Alocações pré-definidas:</strong> Os tokens são distribuídos diretamente para as carteiras específicas, cada uma com seu valor e data de desbloqueio (lock/unlock).</li>
+                            <li><strong>🔐 Bloqueio por tempo:</strong> Algumas carteiras recebem os tokens com <em>timestamp de desbloqueio futuro</em>, o que impede movimentações antes da data estabelecida.</li>
+                            <li><strong>📜 Whitelist automática:</strong> As carteiras que recebem tokens no mint são automaticamente adicionadas à <code>whitelist</code> do contrato, permitindo transferências mesmo durante a proteção anti-bot.</li>
+                            <li><strong>🚫 Proteção contra múltiplas emissões:</strong> Após a execução do mint, o contrato define a flag <code>minted = true</code>, impedindo futuras cunhagens mesmo pelo owner.</li>
+                            <li><strong>📡 Registro transparente:</strong> Todos os eventos de mint são emitidos on-chain, incluindo <code>Transfer</code> e <code>UnlockInfo</code>, garantindo rastreabilidade.</li>
+                        </ul>
+                        <p>
+                            Esse modelo assegura que o token tenha <strong>supply fixo, cunhagem não inflacionária</strong> e <strong>controle total de circulação</strong> nos estágios iniciais, com foco em <em>liquidez controlada, recompensas e marketing estratégico</em>.
+                        </p>
+                    </div>
+                </div>
+                <div id="burn" class='card'>
+                    <div class='card-header'>
+                        <h1>Função Burn</h1>
+                    </div>
+                    <div class='card-body'>
+                        <p>
+                            O contrato do <strong>Systal Coin</strong> permite que <strong>qualquer usuário</strong> com saldo disponível possa queimar seus próprios tokens voluntariamente, reduzindo o supply total.
+                        </p>
+                        <ul>
+                            <li><strong>🔥 Queima direta:</strong> A função <code>burn(uint256 amount)</code> é pública e pode ser chamada a qualquer momento pelo titular dos tokens.</li>
+                            <li><strong>📉 Redução do supply:</strong> A quantidade queimada é <em>subtraída do balanço do remetente</em> e do <code>_totalSupply</code>, refletindo no supply global imediatamente.</li>
+                            <li><strong>🔍 Transparência:</strong> Um evento <code>Transfer</code> é emitido com o destinatário <code>address(0)</code>, sinalizando a queima em block explorers.</li>
+                            <li><strong>🔒 Segurança:</strong> A função valida que o usuário tenha saldo suficiente antes de permitir a queima, protegendo contra underflow.</li>
+                            <li><strong>📜 Nenhum intermediário:</strong> O burn é autônomo, não requerendo permissão do owner ou aprovação prévia.</li>
+                        </ul>
+                        <p>
+                            Isso permite que o <strong>Systal Coin</strong> tenha <strong>mecanismos deflacionários controlados pela comunidade</strong>, promovendo escassez voluntária e engajamento no ecossistema.
+                        </p>
+                    </div>
+                </div>
+                <div id="resgate" class='card'>
+                    <div class='card-header'>
+                        <h1>Função Resgate</h1>
+                    </div>
+                    <div class='card-body'>
+                        <p>
+                            O contrato do <strong>Systal Coin</strong> implementa mecanismos de resgate (<em>rescue</em>) exclusivamente controlados pelo <strong>owner</strong>, com o objetivo de proteger ativos enviados incorretamente ao contrato.
+                        </p>
+                        <ul>
+                            <li><strong>🔐 Resgate de tokens externos:</strong> A função <code>rescueTokens(address token, address to)</code> permite que o administrador recupere tokens BEP20 não pertencentes ao próprio contrato.</li>
+                            <li><strong>⚠️ Proteção contra resgates indevidos:</strong> Tokens marcados como <code>rescueExempt</code> não podem ser resgatados, evitando a remoção acidental de ativos protegidos.</li>
+                            <li><strong>💸 Resgate de BNB:</strong> A função <code>rescueETH(address to)</code> permite recuperar valores em BNB que tenham sido enviados diretamente ao contrato.</li>
+                            <li><strong>📤 Carteira de resgate:</strong> Caso nenhum endereço seja especificado, o valor resgatado é direcionado para a <code>rescueWallet</code> previamente configurada.</li>
+                            <li><strong>📲 Segurança:</strong> Todas as funções de resgate são restritas ao <code>onlyOwner</code>, garantindo controle centralizado e seguro.</li>
+                            <li><strong>📜 Transparência:</strong> A execução de resgates gera eventos <code>RescueExecuted</code> e <code>RescueWalletUpdated</code> registrados em log público.</li>
+                        </ul>
+                        <p>
+                            Esse mecanismo protege o contrato contra perda de fundos por erro humano e adiciona uma camada de segurança administrativa sem interferir na autonomia dos usuários.
+                        </p>
+                    </div>
+                </div>
+                <div id="contrato" class='card'>
+                    <div class='card-header'>
+                        <h1>⚙️ Contrato Inteligente</h1>
+                    </div>
+                    <div class='card-body'>
+                        <p>O contrato inteligente é o núcleo técnico do token SYST, responsável por automatizar regras, garantir segurança nas transações e eliminar a necessidade de intermediários, oferecendo transparência e confiança para todos os participantes.</p>
+                    </div>
+                </div>
+                <div id="auditoria-boas-praticas" class='card'>
+                    <div class='card-header'>
+                        <h1>Auditoria e Boas Práticas</h1>
+                    </div>
+                    <div class='card-body'>
+                        <p>
+                            Participar de um projeto que adota boas práticas e valoriza a transparência é essencial para a segurança e a confiança da comunidade. O <strong>Systal Coin</strong> foi desenvolvido com foco total na <strong>auditorabilidade</strong>, na <strong>proteção dos holders</strong> e na <strong>comunicação clara</strong> com os participantes do ecossistema.
+                        </p>
+                        <ul>
+                            <li><strong>🧾 Documentação NatSpec:</strong> Todas as funções do contrato estão documentadas com o padrão <code>NatSpec</code>, permitindo que block explorers e auditorias exibam descrições técnicas claras para usuários e revisores.</li>
+
+                            <li><strong>🛑 Pausa de emergência:</strong> A administração pode ativar um modo de segurança que <strong>interrompe transferências e ações críticas</strong> em caso de suspeitas, exploits, ou manutenção planejada, protegendo a liquidez e os usuários.</li>
+
+                            <li><strong>🧪 Contrato auditável:</strong> O código segue práticas modernas de desenvolvimento e está disponível publicamente para análise. Isso permite que empresas de auditoria e a própria comunidade validem a integridade do projeto.</li>
+
+                            <li><strong>🧠 Confiança do Holder:</strong> Projetos bem estruturados e auditáveis transmitem credibilidade. Isso atrai não apenas usuários comuns, mas também parcerias sérias, investidores institucionais e integrações com exchanges e dApps.</li>
+
+                            <li><strong>👥 Proteção da comunidade:</strong> A transparência com a base de usuários é uma prioridade. Toda a lógica de mint, burn, transferência, whitelist e resgate é visível e verificável na blockchain.</li>
+                        </ul>
+                        <p>
+                            O compromisso com boas práticas e auditoria demonstra que o <strong>Systal Coin</strong> <strong>não é apenas um ativo digital</strong>, mas um projeto sério, voltado para a longevidade, sustentabilidade e proteção dos seus participantes.
+                        </p>
+                    </div>
+                </div>
+                <div id="funcoes-adm" class='card'>
+                    <div class='card-header'>
+                        <h1>Funções Administrativas</h1>
+                    </div>
+                    <div class='card-body'>
+                        <p>
+                            O contrato <strong>Systal Coin</strong> possui um conjunto robusto de funções administrativas, acessíveis exclusivamente pelo <strong>owner</strong>, que permitem controle seguro e flexível sobre o funcionamento do token. As principais funcionalidades incluem:
+                        </p>
+                        <ul>
+                            <li><strong>🔒 Pausa de emergência:</strong> A função <code>pause(bool status)</code> permite interromper temporariamente todas as transferências, inclusive <code>transfer</code> e <code>transferFrom</code>, como medida de segurança.</li>
+
+                            <li><strong>✅ Gerenciamento de whitelist:</strong> Através das funções <code>setWhitelist(address, bool)</code> e <code>multiWhitelist(address[], bool)</code>, o administrador define quem está autorizado a operar durante períodos restritos (como anti-bot ou pré-venda).</li>
+
+                            <li><strong>🧾 Mint controlado:</strong> O <code>mintInitialSupply()</code> é executável uma única vez e distribui o supply inicial para carteiras predefinidas, com timestamps de desbloqueio e inclusão automática na whitelist.</li>
+
+                            <li><strong>⏳ Controle de desbloqueio:</strong> O <code>updateUnlockTimestamp(address, uint256)</code> permite ao administrador estender a data de desbloqueio de tokens distribuídos, reforçando mecanismos de vesting ou travas estratégicas.</li>
+
+                            <li><strong>👮‍♂️ Transferência e congelamento de propriedade:</strong> As funções <code>transferOwnership(address)</code>, <code>renounceOwnership()</code> e <code>freezeOwnership()</code> permitem a transferência ou renúncia da propriedade, com opção de congelamento irreversível.</li>
+
+                            <li><strong>💼 Atualização da carteira de resgate:</strong> O administrador pode redefinir a <code>rescueWallet</code>, que recebe tokens ou BNB resgatados do contrato.</li>
+
+                            <li><strong>🚨 Proteção contra bots:</strong> Durante os primeiros 2 minutos após o lançamento (<code>antiBotDuration</code>), o contrato bloqueia interações de contratos não-whitelisted, evitando ataques automatizados.</li>
+
+                            <li><strong>🛡️ Marcação de tokens protegidos:</strong> Com <code>setRescueExempt(address, bool)</code>, tokens podem ser marcados como não-resgatáveis para evitar manipulações ou perdas não intencionais.</li>
+                        </ul>
+                        <p>
+                            Essas funções garantem governança segura e adaptável, permitindo que os administradores tomem ações rápidas frente a imprevistos, respeitando os princípios de descentralização gradual.
+                        </p>
+                    </div>
+                </div>
+                <div id="protecao-implementada" class='card'>
+                    <div class='card-header'>
+                        <h1>Proteções Implementadas</h1>
+                    </div>
+                    <div class='card-body'>
+                        <p>
+                            O contrato <strong>Systal Coin</strong> incorpora diversas proteções para garantir segurança, integridade e estabilidade nos momentos críticos, como o lançamento inicial. Entre as principais medidas:
+                        </p>
+                        <ul>
+                            <li><strong>🛡️ Anti-bot / Anti-sniper:</strong> Durante os <strong>2 primeiros minutos</strong> após o lançamento (<code>launchTime</code>), todas as transferências envolvendo contratos não-whitelisted são automaticamente bloqueadas. Essa medida evita que robôs ou snipers automatizados capturem liquidez ou tokens de maneira desleal.</li>
+
+                            <li><strong>🔁 Bloqueio de auto-transferência:</strong> Transferências para o próprio endereço (<code>from == to</code>) são proibidas, prevenindo ataques de loop, erros lógicos ou manipulações de balanceamento.</li>
+
+                            <li><strong>🔐 Desbloqueio temporizado:</strong> Tokens alocados via <code>mintInitialSupply()</code> podem possuir um <code>unlockTimestamp</code>, bloqueando seu uso até determinada data. Isso oferece uma camada de vesting para parceiros, equipe ou propósitos específicos.</li>
+
+                            <li><strong>⏸️ Pausa de emergência:</strong> A função <code>pause(true)</code> permite congelar todas as operações críticas do token em situações de risco, como falhas em exchanges, ataques ou bugs graves.</li>
+
+                            <li><strong>🔍 Verificação de contrato:</strong> A função <code>isContract(address)</code> é usada para detectar e restringir interações com contratos durante o período anti-bot, dificultando ataques automatizados sofisticados.</li>
+                        </ul>
+                        <p>
+                            Essas proteções foram pensadas para mitigar riscos nos momentos mais sensíveis da vida do token, sem comprometer a usabilidade dos usuários legítimos.
+                        </p>
+                    </div>
+                </div>
+                <div id="codigo-verificacoes" class='card'>
+                    <div class='card-header'>
+                        <h1>Código fonte e verificações</h1>
+                    </div>
+                    <div class='card-body'>
+                        <p>
+                            O código-fonte completo do <strong>Systal Coin</strong> está disponível publicamente no <a href="https://github.com/seuusuario/Systal Coin" target="_blank">GitHub</a>, permitindo total transparência para a comunidade e desenvolvedores independentes. A versão final do contrato foi verificada no <a href="https://bscscan.com/address/0x..." target="_blank">BSCScan</a>, com o hash de compilação correspondente, garantindo que o contrato implantado seja exatamente o mesmo que foi auditado e publicado.
+                        </p>
+                        <p>
+                            Essa prática reforça o compromisso com a segurança, a confiabilidade do código e o alinhamento com os padrões recomendados de desenvolvimento Web3.
+                        </p>
+                    </div>
+                </div>
+                <div id="tokenomics" class='card'>
+                    <div class='card-header'>
+                        <h1>🧩 Tokenomics</h1>
+                    </div>
+                    <div class='card-body'>
+                        <p>
+                            A tokenomics do <strong>Systal Coin</strong> define com transparência como os tokens são distribuídos, utilizados e movimentados dentro do ecossistema.
+                            A proposta foi pensada para garantir equilíbrio entre liquidez, incentivos, governança e sustentabilidade do projeto.
+                        </p>
+                        <ul>
+                            <li><strong>Distribuição clara:</strong> tokens são alocados entre carteiras de liquidez, marketing, equipe, comunidade e desenvolvimento com percentuais pré-definidos.</li>
+                            <li><strong>Transparência:</strong> todas as carteiras vinculadas à distribuição estão disponíveis publicamente nesta wiki.</li>
+                            <li><strong>Utilidade real:</strong> o token é usado para acessar funcionalidades, obter benefícios, receber recompensas e participar de decisões no ecossistema EcoSystal.</li>
+                            <li><strong>Proteção à comunidade:</strong> mecanismos como anti-bot, pausas de emergência e auditoria reforçam a segurança da distribuição e uso.</li>
+                        </ul>
+                        <p>
+                            Essa estrutura foi planejada para valorizar quem apoia o projeto a longo prazo, mantendo uma base sólida e comprometida com a transparência e o crescimento sustentável da comunidade.
+                        </p>
+                    </div>
+                </div>
+                <div id="percentuais-distribuicao" class='card'>
+                    <div class='card-header'>
+                        <h1>Percentuais de distribuição</h1>
+                    </div>
+                    <div class='card-body'>
+                        <ul>
+                            <li>50% para liquidez</li>
+                            <li>25% para marketing e equipe</li>
+                            <li>25% para comunidade e recompensas</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="modelos-utilidade" class='card'>
+                    <div class='card-header'>
+                        <h1>Modelos de utilidade</h1>
+                    </div>
+                    <div class='card-body'>
+                        <p>
+                            O <strong>Systal Coin</strong> é um <strong>utility token</strong> criado exclusivamente para ser utilizado dentro do ecossistema do projeto EcoSystal. Seu propósito é funcional, oferecendo acesso a recursos, vantagens e funcionalidades específicas da plataforma, sem fins de investimento especulativo.
+                        </p>
+                        <ul>
+                            <li>Desbloqueio de benefícios exclusivos e acesso a funcionalidades especiais dentro dos sistemas da comunidade;</li>
+                            <li>Bonificação por participação ativa, engajamento e colaboração em ações da rede;</li>
+                            <li>Entrega de recompensas e prêmios em campanhas internas e educativas;</li>
+                            <li>Troca por serviços e recursos internos, incluindo cashback funcional dentro de plataformas vinculadas;</li>
+                            <li>Reconhecimento e voz em decisões comunitárias, reforçando o papel de quem contribui com o projeto.</li>
+                        </ul>
+                        <p>
+                            O <strong>Systal Coin</strong> não representa participação societária, promessa de lucro ou investimento, sendo estruturado conforme os princípios legais que regem tokens de utilidade. Esse modelo reforça a sustentabilidade do ecossistema e incentiva o uso consciente e transparente por parte da comunidade.
+                        </p>
+                    </div>
+                </div>
+                <div id="seguranca" class='card'>
+                    <div class='card-header'>
+                        <h1>🔐 Segurança</h1>
+                    </div>
+                    <div class='card-body'>
+                        <p>    A segurança é uma das prioridades do projeto. O contrato inteligente foi desenvolvido com mecanismos que evitam abusos, como bloqueios temporários para impedir ações suspeitas logo após o lançamento (proteção contra bots e snipers), validações para impedir transferências incorretas, e a possibilidade de pausas de emergência caso alguma atividade anormal seja detectada. Tudo isso ajuda a proteger os investidores, garantir a integridade do token e manter a confiança da comunidade desde os primeiros momentos.
+                        </p>
+                    </div>
+                </div>
+                <div id="controle-acesso" class='card'>
+                    <div class='card-header'>
+                        <h1>Controle de acesso</h1>
+                    </div>
+                    <div class='card-body'>
+                        <p>
+                            O controle de acesso é um dos pilares da segurança do contrato, assegurando que apenas carteiras autorizadas possam executar ações sensíveis, como a cunhagem inicial de tokens ou modificações em parâmetros internos.
+                        </p>
+                        <p>
+                            Esse modelo baseado em permissões evita o uso indevido e manipulações mal-intencionadas, garantindo que decisões críticas sejam tomadas apenas por quem possui autoridade definida dentro do projeto.
+                        </p>
+                        <p>
+                            Além disso, mecanismos como a <code>whitelist</code> e bloqueios temporários para determinadas carteiras ajudam a manter o ambiente sob controle, protegendo os holders e favorecendo uma governança mais transparente e segura.
+                        </p>
+                    </div>
+                </div>
+                <div id="pause-whitelist-antibot" class='card'>
+                    <div class='card-header'>
+                        <h1>Pause, whitelist e anti-bot</h1>
+                    </div>
+                    <div class='card-body'>
+                        <p>
+                            O contrato implementa mecanismos fundamentais para garantir a segurança e o controle do token durante toda sua operação.
+                        </p>
+                        <p>
+                            A função <code>pause(bool status)</code> permite ao proprietário pausar todas as transferências a qualquer momento, sendo uma ferramenta crucial em situações de emergência para evitar movimentações maliciosas ou inesperadas.
+                        </p>
+                        <p>
+                            A <code>whitelist</code> é utilizada para permitir que apenas carteiras previamente autorizadas possam receber alocações iniciais ou interagir com funções sensíveis, como o <code>mintInitialSupply()</code>.
+                        </p>
+                        <p>
+                            Já a proteção anti-bot, implementada nos <code>2 minutos</code> iniciais após o lançamento (<code>antiBotDuration</code>), bloqueia automaticamente interações de contratos e carteiras não autorizadas. Isso previne ataques de sniping e garante uma distribuição mais justa para a comunidade.
+                        </p>
+                    </div>
+                </div>
+                <div id="recover-tokens" class='card'>
+                    <div class='card-header'>
+                        <h1>Recover Tokens / fallback</h1>
+                    </div>
+                    <div class='card-body'>
+                        <p>
+                            O contrato inteligente implementa uma função de recuperação de tokens chamada <code>rescueTokens()</code>, que permite ao proprietário resgatar ativos enviados por engano para o endereço do contrato. Essa funcionalidade é fundamental para proteger os usuários contra perdas acidentais, garantindo que fundos não fiquem presos permanentemente.
+                        </p>
+                        <p>
+                            Além disso, há suporte ao recebimento de BNB via <code>receive()</code>, um sistema de fallback que assegura o funcionamento adequado caso o contrato receba valores inesperados. Juntos, esses mecanismos tornam a interação com o contrato mais segura e resiliente a erros comuns da comunidade.
+                        </p>
+                    </div>
+                </div>
+                <div id="lancamento" class='card'>
+                    <div class='card-header'>
+                        <h1>🚀 Lançamento</h1>
+                    </div>
+                    <div class='card-body'>
+                        <p>
+                            O processo de lançamento do <strong>Systal Coin</strong> envolve a definição estratégica da abertura de liquidez e sua listagem em plataformas DEX. Esta etapa é fundamental para garantir que os tokens estejam disponíveis para negociação pública, com segurança e transparência.
+                        </p>
+                        <p>
+                            Um bom plano de lançamento prevê o momento ideal para adicionar liquidez, a porcentagem de tokens destinados a essa finalidade e mecanismos de proteção nas primeiras interações (como anti-sniper e whitelist). Isso protege os primeiros holders, evita manipulações de preço e contribui para a construção de um mercado estável e confiável desde os primeiros blocos.
+                        </p>
+                    </div>
+                </div>
+                <div id="estrategia-marketing" class='card'>
+                    <div class='card-header'>
+                        <h1>Estratégia de marketing</h1>
+                    </div>
+                    <div class='card-body'>
+                        <p>
+                            A estratégia de marketing para o <strong>Systal Coin</strong> pode abranger diversas frentes com o objetivo de ampliar a visibilidade do projeto, atrair novos usuários e fortalecer a confiança da comunidade. Entre as ações possíveis estão campanhas educativas sobre o funcionamento do token e seu ecossistema, parcerias com influenciadores e criadores de conteúdo, iniciativas de marketing de conteúdo, anúncios em plataformas segmentadas, participação em eventos e comunidades cripto, além de sistemas de recompensa baseados em engajamento e participação.
+                        </p>
+                        <p>
+                            O foco está em informar, atrair e reter usuários de forma orgânica e ética, promovendo uma comunidade ativa, engajada e bem informada sobre o potencial e a proposta do projeto.
+                        </p>
+                    </div>
+                </div>
+                <div id="relatorios" class='card'>
+                    <div class='card-header'>
+                        <h1>📊 Relatórios</h1>
+                    </div>
+                    <div class='card-body'>
+                        <p>
+                            Durante os primeiros 24 meses do projeto, serão gerados e publicados relatórios mensais detalhados abordando todos os aspectos relevantes relacionados ao Systal Coin. Esses relatórios incluirão movimentações de carteiras, ações administrativas, campanhas de marketing, eventos de burn, e outras iniciativas que impactem o ecossistema.
+                        </p>
+                        <p>
+                            Os documentos serão disponibilizados nos canais oficiais e redes sociais do projeto, garantindo acesso público e facilitando o acompanhamento contínuo da comunidade. Essa prática reforça o compromisso com a transparência, ética e respeito aos holders e participantes do ecossistema.
+                        </p>
+                    </div>
+                </div>
+                <div id="transparencia-carteiras" class='card'>
+                    <div class='card-header'>
+                        <h1>Transparência de carteiras</h1>
+                    </div>
+                    <div class='card-body'>
+                        <p>
+                            Todas as carteiras oficiais vinculadas ao projeto — incluindo aquelas responsáveis por liquidez, equipe, marketing, recompensas e administração — são públicas e integram diretamente o contrato inteligente do Systal Coin.
+                        </p>
+                        <p>
+                            Essas carteiras estão listadas de forma clara e acessível, com suas funções descritas na seção de <a href="#tokenomics">Tokenomics</a> e <a href="#percentuais-distribuicao">Distribuição</a>. Essa prática reforça o compromisso com a transparência, conformidade regulatória e segurança dos investidores, permitindo que qualquer holder acompanhe as movimentações on-chain e assegure que os fundos estão sendo utilizados conforme planejado.
+                        </p>
+                    </div>
+                </div>
+                <div id="links-uteis" class='card'>
+                    <div class='card-header'>
+                        <h1>Links úteis</h1>
+                    </div>
+                    <div class='card-body'>
+                        <h4>Projeto</h4>
+                        <ul>
+                            <li><a href="https://github.com/seuusuario/Systal Coin" target="_blank">Site Oficial</a></li>
+                            <li><a href="https://github.com/seuusuario/Systal Coin" target="_blank">GitHub do contrato</a></li>
+                            <li><a href="https://github.com/seuusuario/Systal Coin" target="_blank">Whitepaper</a></li>
+                        </ul>
+
+                        <h4>Exploradores</h4>
+                        <ul>
+                            <li><a href="https://bscscan.com/token/0x..." target="_blank">BSCScan</a></li>
+                            <li><a href="https://www.dextools.io/app/en/bnb/pair-explorer/0x..." target="_blank">Dextools</a></li>
+                        </ul>
+
+                        <h4>Redes sociais</h4>
+                        <ul>
+                            <li><a href="https://t.me/Systal Coin" target="_blank">Telegram Oficial</a></li>
+                            <li><a href="https://twitter.com/Systal Coin" target="_blank">Twitter / X</a></li>
+                            <li><a href="https://discord.gg/Systal Coin" target="_blank">Instagram</a></li>
+                            <li><a href="https://discord.gg/Systal Coin" target="_blank">Facebook</a></li>
+                            <li><a href="https://discord.gg/Systal Coin" target="_blank">Linkedin</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
 </div>
 
-<div class="container">
-
-    <nav id="navbar">
-        <header><a href="#introducao">📚 <strong>Systal Coin</strong> Wiki</a></header>
-
-        <header><a href="#introducao">🧱 Introdução</a></header>
-        <a class="nav-link sub" href="#sobre-projeto">└ Sobre o projeto</a>
-
-        <header><a href="#token">🪙 Token</a></header>
-        <a class="nav-link sub" href="#nome-simbolo-supply">├ Nome, símbolo e supply</a>
-        <a class="nav-link sub" href="#mint">├ Mint</a>
-        <a class="nav-link sub" href="#burn">├ Burn</a>
-        <a class="nav-link sub" href="#resgate">└ Resgate</a>
-
-        <header><a href="#contrato">⚙️ Contrato Inteligente</a></header>
-        <a class="nav-link sub" href="#auditoria-boas-praticas">├ Auditoria</a>
-        <a class="nav-link sub" href="#funcoes-adm">├ Funções administrativas</a>
-        <a class="nav-link sub" href="#protecao-implementada">├ Proteções implementadas</a>
-        <a class="nav-link sub" href="#codigo-verificacoes">└ Código fonte e verificações</a>
-
-        <header><a href="#tokenomics">🧩 Tokenomics</a></header>
-        <a class="nav-link sub" href="#percentuais-distribuicao">├ Percentuais de distribuição</a>
-        <a class="nav-link sub" href="#modelos-utilidade">└ Modelos de utilidade</a>
-
-        <header><a href="#seguranca">🔐 Segurança</a></header>
-        <a class="nav-link sub" href="#controle-acesso">├ Controle de acesso</a>
-        <a class="nav-link sub" href="#pause-whitelist-antibot">├ Pause, whitelist, anti-bot</a>
-        <a class="nav-link sub" href="#recover-tokens">└ recoverTokens / fallback</a>
-
-        <header><a href="#lancamento">🚀 Lançamento</a></header>
-        <a class="nav-link sub" href="#estrategia-marketing">└ Estratégia de marketing</a>
-
-        <header><a href="#relatorios">📊 Relatórios</a></header>
-        <a class="nav-link sub" href="#transparencia-carteiras">└ Transparência de carteiras</a>
-
-        <header><a href="#links-uteis">🌐 Links úteis</a></header>
-        <a class="nav-link sub" href="#bscscan">├ Explorador (BSCScan)</a>
-        <a class="nav-link sub" href="#dextools">├ Dextools</a>
-        <a class="nav-link sub" href="#github-contrato">└ GitHub do contrato</a>
-    </nav>
-
-
-
-    <main id="main-doc">
-        <section id="introducao">
-            <header class="big">🧱 Introdução</header>
-            <p>A <strong>Systal Coin</strong> é uma criptomoeda BEP20 focada em transparência, segurança e utilidade no ecossistema BNB Smart Chain. Esta wiki cobre os principais aspectos do projeto.</p>
-        </section>
-
-        <section id="sobre-projeto">
-            <header>Sobre o projeto</header>
-            <p>
-                O <strong>Systal Coin</strong> é um token digital criado para ser o pilar de um ecossistema moderno, seguro e transparente. Desenvolvido com base nas melhores práticas de contratos inteligentes, o projeto combina funcionalidades robustas como controle de acesso, proteção anti-bot, auditoria pública e distribuição bem definida — oferecendo um ambiente confiável tanto para usuários quanto para desenvolvedores.
-            </p>
-            <p>
-                Comprometido com responsabilidade e conformidade, o <strong>Systal Coin</strong> adota código aberto documentado com <code>NatSpec</code>, verificação completa em block explorers como o BscScan, e mecanismos claros de governança. Essa estrutura garante que cada movimentação e atualização possa ser auditada pela comunidade, reforçando a transparência e a segurança do projeto.
-            </p>
-            <p>
-                Um dos principais focos do <strong>Systal Coin</strong> é a usabilidade: foi projetado para funcionar de forma fluida nas carteiras mais populares, como MetaMask, Trust Wallet, SafePal, bem como em hardware wallets como Trezor e Ledger. Além disso, ele é compatível com diversas exchanges descentralizadas (DEX), proporcionando liberdade para que os usuários interajam com o ecossistema sem barreiras técnicas ou dependência de plataformas centralizadas.
-            </p>
-            <p>
-                Mais do que um ativo digital, o <strong>Systal Coin</strong> é uma infraestrutura de utilidade. Ele permite participação em programas de benefícios, bonificações, acesso a serviços e recompensas dentro do ecossistema, além de oferecer voz ativa à comunidade de holders. Seu design evita abusos e incentiva um crescimento sustentável, sendo cuidadosamente arquitetado para equilibrar inovação com proteção aos usuários.
-            </p>
-        </section>
-
-
-
-        <section id="token">
-            <header class="big">🪙 Token SYST</header>
-            <p>Detalhes técnicos e funcionais do token SYST.</p>
-        </section>
-
-        <section id="nome-simbolo-supply">
-            <header>Nome, símbolo e supply</header>
-            <table border="0" cellpadding="4" cellspacing="0">
-                <tr>
-                    <td><strong>Nome:</strong></td>
-                    <td>Systal Coin</td>
-                </tr>
-                <tr>
-                    <td><strong>Símbolo:</strong></td>
-                    <td>SYST</td>
-                </tr>
-                <tr>
-                    <td><strong>Supply Máximo:</strong></td>
-                    <td>100.000.000 SYST</td>
-                </tr>
-            </table>
-        </section>
-
-
-        <section id="mint">
-            <header>Mint</header>
-            <p>
-                O contrato do <strong>Systal Coin</strong> utiliza um <strong>modelo de mint travado e controlado</strong> para garantir segurança e transparência na emissão de novos tokens.
-            </p>
-            <ul>
-                <li><strong>🧷 Cunhagem única:</strong> O mint só pode ser realizado uma única vez por meio da função <code>mintInitialSupply()</code>, disponível apenas ao <code>owner</code>.</li>
-                <li><strong>📦 Alocações pré-definidas:</strong> Os tokens são distribuídos diretamente para as carteiras específicas, cada uma com seu valor e data de desbloqueio (lock/unlock).</li>
-                <li><strong>🔐 Bloqueio por tempo:</strong> Algumas carteiras recebem os tokens com <em>timestamp de desbloqueio futuro</em>, o que impede movimentações antes da data estabelecida.</li>
-                <li><strong>📜 Whitelist automática:</strong> As carteiras que recebem tokens no mint são automaticamente adicionadas à <code>whitelist</code> do contrato, permitindo transferências mesmo durante a proteção anti-bot.</li>
-                <li><strong>🚫 Proteção contra múltiplas emissões:</strong> Após a execução do mint, o contrato define a flag <code>minted = true</code>, impedindo futuras cunhagens mesmo pelo owner.</li>
-                <li><strong>📡 Registro transparente:</strong> Todos os eventos de mint são emitidos on-chain, incluindo <code>Transfer</code> e <code>UnlockInfo</code>, garantindo rastreabilidade.</li>
-            </ul>
-            <p>
-                Esse modelo assegura que o token tenha <strong>supply fixo, cunhagem não inflacionária</strong> e <strong>controle total de circulação</strong> nos estágios iniciais, com foco em <em>liquidez controlada, recompensas e marketing estratégico</em>.
-            </p>
-        </section>
-
-
-
-        <section id="burn">
-            <header>Função Burn</header>
-            <p>
-                O contrato do <strong>Systal Coin</strong> permite que <strong>qualquer usuário</strong> com saldo disponível possa queimar seus próprios tokens voluntariamente, reduzindo o supply total.
-            </p>
-            <ul>
-                <li><strong>🔥 Queima direta:</strong> A função <code>burn(uint256 amount)</code> é pública e pode ser chamada a qualquer momento pelo titular dos tokens.</li>
-                <li><strong>📉 Redução do supply:</strong> A quantidade queimada é <em>subtraída do balanço do remetente</em> e do <code>_totalSupply</code>, refletindo no supply global imediatamente.</li>
-                <li><strong>🔍 Transparência:</strong> Um evento <code>Transfer</code> é emitido com o destinatário <code>address(0)</code>, sinalizando a queima em block explorers.</li>
-                <li><strong>🔒 Segurança:</strong> A função valida que o usuário tenha saldo suficiente antes de permitir a queima, protegendo contra underflow.</li>
-                <li><strong>📜 Nenhum intermediário:</strong> O burn é autônomo, não requerendo permissão do owner ou aprovação prévia.</li>
-            </ul>
-            <p>
-                Isso permite que o <strong>Systal Coin</strong> tenha <strong>mecanismos deflacionários controlados pela comunidade</strong>, promovendo escassez voluntária e engajamento no ecossistema.
-            </p>
-        </section>
-
-
-        <section id="resgate">
-            <header>Função Resgate</header>
-            <p>
-                O contrato do <strong>Systal Coin</strong> implementa mecanismos de resgate (<em>rescue</em>) exclusivamente controlados pelo <strong>owner</strong>, com o objetivo de proteger ativos enviados incorretamente ao contrato.
-            </p>
-            <ul>
-                <li><strong>🔐 Resgate de tokens externos:</strong> A função <code>rescueTokens(address token, address to)</code> permite que o administrador recupere tokens BEP20 não pertencentes ao próprio contrato.</li>
-                <li><strong>⚠️ Proteção contra resgates indevidos:</strong> Tokens marcados como <code>rescueExempt</code> não podem ser resgatados, evitando a remoção acidental de ativos protegidos.</li>
-                <li><strong>💸 Resgate de BNB:</strong> A função <code>rescueETH(address to)</code> permite recuperar valores em BNB que tenham sido enviados diretamente ao contrato.</li>
-                <li><strong>📤 Carteira de resgate:</strong> Caso nenhum endereço seja especificado, o valor resgatado é direcionado para a <code>rescueWallet</code> previamente configurada.</li>
-                <li><strong>📲 Segurança:</strong> Todas as funções de resgate são restritas ao <code>onlyOwner</code>, garantindo controle centralizado e seguro.</li>
-                <li><strong>📜 Transparência:</strong> A execução de resgates gera eventos <code>RescueExecuted</code> e <code>RescueWalletUpdated</code> registrados em log público.</li>
-            </ul>
-            <p>
-                Esse mecanismo protege o contrato contra perda de fundos por erro humano e adiciona uma camada de segurança administrativa sem interferir na autonomia dos usuários.
-            </p>
-        </section>
-
-
-        <section id="contrato">
-            <header class="big">⚙️ Contrato Inteligente</header>
-            <p>O contrato inteligente é o núcleo técnico do token SYST, responsável por automatizar regras, garantir segurança nas transações e eliminar a necessidade de intermediários, oferecendo transparência e confiança para todos os participantes.</p>
-        </section>
-
-        <section id="auditoria-boas-praticas">
-            <header>Auditoria e Boas Práticas</header>
-            <p>
-                Participar de um projeto que adota boas práticas e valoriza a transparência é essencial para a segurança e a confiança da comunidade. O <strong>Systal Coin</strong> foi desenvolvido com foco total na <strong>auditorabilidade</strong>, na <strong>proteção dos holders</strong> e na <strong>comunicação clara</strong> com os participantes do ecossistema.
-            </p>
-            <ul>
-                <li><strong>🧾 Documentação NatSpec:</strong> Todas as funções do contrato estão documentadas com o padrão <code>NatSpec</code>, permitindo que block explorers e auditorias exibam descrições técnicas claras para usuários e revisores.</li>
-
-                <li><strong>🛑 Pausa de emergência:</strong> A administração pode ativar um modo de segurança que <strong>interrompe transferências e ações críticas</strong> em caso de suspeitas, exploits, ou manutenção planejada, protegendo a liquidez e os usuários.</li>
-
-                <li><strong>🧪 Contrato auditável:</strong> O código segue práticas modernas de desenvolvimento e está disponível publicamente para análise. Isso permite que empresas de auditoria e a própria comunidade validem a integridade do projeto.</li>
-
-                <li><strong>🧠 Confiança do Holder:</strong> Projetos bem estruturados e auditáveis transmitem credibilidade. Isso atrai não apenas usuários comuns, mas também parcerias sérias, investidores institucionais e integrações com exchanges e dApps.</li>
-
-                <li><strong>👥 Proteção da comunidade:</strong> A transparência com a base de usuários é uma prioridade. Toda a lógica de mint, burn, transferência, whitelist e resgate é visível e verificável na blockchain.</li>
-            </ul>
-            <p>
-                O compromisso com boas práticas e auditoria demonstra que o <strong>Systal Coin</strong> <strong>não é apenas um ativo digital</strong>, mas um projeto sério, voltado para a longevidade, sustentabilidade e proteção dos seus participantes.
-            </p>
-        </section>
-
-
-        <section id="funcoes-adm">
-            <header>Funções Administrativas</header>
-            <p>
-                O contrato <strong>Systal Coin</strong> possui um conjunto robusto de funções administrativas, acessíveis exclusivamente pelo <strong>owner</strong>, que permitem controle seguro e flexível sobre o funcionamento do token. As principais funcionalidades incluem:
-            </p>
-            <ul>
-                <li><strong>🔒 Pausa de emergência:</strong> A função <code>pause(bool status)</code> permite interromper temporariamente todas as transferências, inclusive <code>transfer</code> e <code>transferFrom</code>, como medida de segurança.</li>
-
-                <li><strong>✅ Gerenciamento de whitelist:</strong> Através das funções <code>setWhitelist(address, bool)</code> e <code>multiWhitelist(address[], bool)</code>, o administrador define quem está autorizado a operar durante períodos restritos (como anti-bot ou pré-venda).</li>
-
-                <li><strong>🧾 Mint controlado:</strong> O <code>mintInitialSupply()</code> é executável uma única vez e distribui o supply inicial para carteiras predefinidas, com timestamps de desbloqueio e inclusão automática na whitelist.</li>
-
-                <li><strong>⏳ Controle de desbloqueio:</strong> O <code>updateUnlockTimestamp(address, uint256)</code> permite ao administrador estender a data de desbloqueio de tokens distribuídos, reforçando mecanismos de vesting ou travas estratégicas.</li>
-
-                <li><strong>👮‍♂️ Transferência e congelamento de propriedade:</strong> As funções <code>transferOwnership(address)</code>, <code>renounceOwnership()</code> e <code>freezeOwnership()</code> permitem a transferência ou renúncia da propriedade, com opção de congelamento irreversível.</li>
-
-                <li><strong>💼 Atualização da carteira de resgate:</strong> O administrador pode redefinir a <code>rescueWallet</code>, que recebe tokens ou BNB resgatados do contrato.</li>
-
-                <li><strong>🚨 Proteção contra bots:</strong> Durante os primeiros 2 minutos após o lançamento (<code>antiBotDuration</code>), o contrato bloqueia interações de contratos não-whitelisted, evitando ataques automatizados.</li>
-
-                <li><strong>🛡️ Marcação de tokens protegidos:</strong> Com <code>setRescueExempt(address, bool)</code>, tokens podem ser marcados como não-resgatáveis para evitar manipulações ou perdas não intencionais.</li>
-            </ul>
-            <p>
-                Essas funções garantem governança segura e adaptável, permitindo que os administradores tomem ações rápidas frente a imprevistos, respeitando os princípios de descentralização gradual.
-            </p>
-        </section>
-
-
-        <section id="protecao-implementada">
-            <header>Proteções Implementadas</header>
-            <p>
-                O contrato <strong>Systal Coin</strong> incorpora diversas proteções para garantir segurança, integridade e estabilidade nos momentos críticos, como o lançamento inicial. Entre as principais medidas:
-            </p>
-            <ul>
-                <li><strong>🛡️ Anti-bot / Anti-sniper:</strong> Durante os <strong>2 primeiros minutos</strong> após o lançamento (<code>launchTime</code>), todas as transferências envolvendo contratos não-whitelisted são automaticamente bloqueadas. Essa medida evita que robôs ou snipers automatizados capturem liquidez ou tokens de maneira desleal.</li>
-
-                <li><strong>🔁 Bloqueio de auto-transferência:</strong> Transferências para o próprio endereço (<code>from == to</code>) são proibidas, prevenindo ataques de loop, erros lógicos ou manipulações de balanceamento.</li>
-
-                <li><strong>🔐 Desbloqueio temporizado:</strong> Tokens alocados via <code>mintInitialSupply()</code> podem possuir um <code>unlockTimestamp</code>, bloqueando seu uso até determinada data. Isso oferece uma camada de vesting para parceiros, equipe ou propósitos específicos.</li>
-
-                <li><strong>⏸️ Pausa de emergência:</strong> A função <code>pause(true)</code> permite congelar todas as operações críticas do token em situações de risco, como falhas em exchanges, ataques ou bugs graves.</li>
-
-                <li><strong>🔍 Verificação de contrato:</strong> A função <code>isContract(address)</code> é usada para detectar e restringir interações com contratos durante o período anti-bot, dificultando ataques automatizados sofisticados.</li>
-            </ul>
-            <p>
-                Essas proteções foram pensadas para mitigar riscos nos momentos mais sensíveis da vida do token, sem comprometer a usabilidade dos usuários legítimos.
-            </p>
-        </section>
-
-
-        <section id="codigo-verificacoes">
-            <header>Código fonte e verificações</header>
-            <p>
-                O código-fonte completo do <strong>Systal Coin</strong> está disponível publicamente no <a href="https://github.com/seuusuario/Systal Coin" target="_blank">GitHub</a>, permitindo total transparência para a comunidade e desenvolvedores independentes. A versão final do contrato foi verificada no <a href="https://bscscan.com/address/0x..." target="_blank">BSCScan</a>, com o hash de compilação correspondente, garantindo que o contrato implantado seja exatamente o mesmo que foi auditado e publicado.
-            </p>
-            <p>
-                Essa prática reforça o compromisso com a segurança, a confiabilidade do código e o alinhamento com os padrões recomendados de desenvolvimento Web3.
-            </p>
-        </section>
-
-
-        <section id="tokenomics">
-            <header class="big">🧩 Tokenomics</header>
-            <p>
-                A tokenomics do <strong>Systal Coin</strong> define com transparência como os tokens são distribuídos, utilizados e movimentados dentro do ecossistema.
-                A proposta foi pensada para garantir equilíbrio entre liquidez, incentivos, governança e sustentabilidade do projeto.
-            </p>
-            <ul>
-                <li><strong>Distribuição clara:</strong> tokens são alocados entre carteiras de liquidez, marketing, equipe, comunidade e desenvolvimento com percentuais pré-definidos.</li>
-                <li><strong>Transparência:</strong> todas as carteiras vinculadas à distribuição estão disponíveis publicamente nesta wiki.</li>
-                <li><strong>Utilidade real:</strong> o token é usado para acessar funcionalidades, obter benefícios, receber recompensas e participar de decisões no ecossistema EcoSystal.</li>
-                <li><strong>Proteção à comunidade:</strong> mecanismos como anti-bot, pausas de emergência e auditoria reforçam a segurança da distribuição e uso.</li>
-            </ul>
-            <p>
-                Essa estrutura foi planejada para valorizar quem apoia o projeto a longo prazo, mantendo uma base sólida e comprometida com a transparência e o crescimento sustentável da comunidade.
-            </p>
-        </section>
-
-
-        <section id="percentuais-distribuicao">
-            <header>Percentuais de distribuição</header>
-            <ul>
-                <li>50% para liquidez</li>
-                <li>25% para marketing e equipe</li>
-                <li>25% para comunidade e recompensas</li>
-            </ul>
-        </section>
-
-        <section id="modelos-utilidade">
-            <header>Modelos de utilidade</header>
-            <p>
-                O <strong>Systal Coin</strong> é um <strong>utility token</strong> criado exclusivamente para ser utilizado dentro do ecossistema do projeto EcoSystal. Seu propósito é funcional, oferecendo acesso a recursos, vantagens e funcionalidades específicas da plataforma, sem fins de investimento especulativo.
-            </p>
-            <ul>
-                <li>Desbloqueio de benefícios exclusivos e acesso a funcionalidades especiais dentro dos sistemas da comunidade;</li>
-                <li>Bonificação por participação ativa, engajamento e colaboração em ações da rede;</li>
-                <li>Entrega de recompensas e prêmios em campanhas internas e educativas;</li>
-                <li>Troca por serviços e recursos internos, incluindo cashback funcional dentro de plataformas vinculadas;</li>
-                <li>Reconhecimento e voz em decisões comunitárias, reforçando o papel de quem contribui com o projeto.</li>
-            </ul>
-            <p>
-                O <strong>Systal Coin</strong> não representa participação societária, promessa de lucro ou investimento, sendo estruturado conforme os princípios legais que regem tokens de utilidade. Esse modelo reforça a sustentabilidade do ecossistema e incentiva o uso consciente e transparente por parte da comunidade.
-            </p>
-        </section>
-
-
-
-        <section id="seguranca">
-            <header class="big">🔐 Segurança</header>
-            <p>    A segurança é uma das prioridades do projeto. O contrato inteligente foi desenvolvido com mecanismos que evitam abusos, como bloqueios temporários para impedir ações suspeitas logo após o lançamento (proteção contra bots e snipers), validações para impedir transferências incorretas, e a possibilidade de pausas de emergência caso alguma atividade anormal seja detectada. Tudo isso ajuda a proteger os investidores, garantir a integridade do token e manter a confiança da comunidade desde os primeiros momentos.
-            </p>
-        </section>
-
-        <section id="controle-acesso">
-            <header>Controle de acesso</header>
-            <p>
-                O controle de acesso é um dos pilares da segurança do contrato, assegurando que apenas carteiras autorizadas possam executar ações sensíveis, como a cunhagem inicial de tokens ou modificações em parâmetros internos.
-            </p>
-            <p>
-                Esse modelo baseado em permissões evita o uso indevido e manipulações mal-intencionadas, garantindo que decisões críticas sejam tomadas apenas por quem possui autoridade definida dentro do projeto.
-            </p>
-            <p>
-                Além disso, mecanismos como a <code>whitelist</code> e bloqueios temporários para determinadas carteiras ajudam a manter o ambiente sob controle, protegendo os holders e favorecendo uma governança mais transparente e segura.
-            </p>
-        </section>
-
-
-        <section id="pause-whitelist-antibot">
-            <header>Pause, whitelist e anti-bot</header>
-            <p>
-                O contrato implementa mecanismos fundamentais para garantir a segurança e o controle do token durante toda sua operação.
-            </p>
-            <p>
-                A função <code>pause(bool status)</code> permite ao proprietário pausar todas as transferências a qualquer momento, sendo uma ferramenta crucial em situações de emergência para evitar movimentações maliciosas ou inesperadas.
-            </p>
-            <p>
-                A <code>whitelist</code> é utilizada para permitir que apenas carteiras previamente autorizadas possam receber alocações iniciais ou interagir com funções sensíveis, como o <code>mintInitialSupply()</code>.
-            </p>
-            <p>
-                Já a proteção anti-bot, implementada nos <code>2 minutos</code> iniciais após o lançamento (<code>antiBotDuration</code>), bloqueia automaticamente interações de contratos e carteiras não autorizadas. Isso previne ataques de sniping e garante uma distribuição mais justa para a comunidade.
-            </p>
-        </section>
-
-
-        <section id="recover-tokens">
-            <header>RecoverTokens / fallback</header>
-            <p>
-                O contrato inteligente implementa uma função de recuperação de tokens chamada <code>rescueTokens()</code>, que permite ao proprietário resgatar ativos enviados por engano para o endereço do contrato. Essa funcionalidade é fundamental para proteger os usuários contra perdas acidentais, garantindo que fundos não fiquem presos permanentemente.
-            </p>
-            <p>
-                Além disso, há suporte ao recebimento de BNB via <code>receive()</code>, um sistema de fallback que assegura o funcionamento adequado caso o contrato receba valores inesperados. Juntos, esses mecanismos tornam a interação com o contrato mais segura e resiliente a erros comuns da comunidade.
-            </p>
-        </section>
-
-
-        <section id="lancamento">
-            <header class="big">🚀 Lançamento</header>
-            <p>
-                O processo de lançamento do <strong>Systal Coin</strong> envolve a definição estratégica da abertura de liquidez e sua listagem em plataformas DEX. Esta etapa é fundamental para garantir que os tokens estejam disponíveis para negociação pública, com segurança e transparência.
-            </p>
-            <p>
-                Um bom plano de lançamento prevê o momento ideal para adicionar liquidez, a porcentagem de tokens destinados a essa finalidade e mecanismos de proteção nas primeiras interações (como anti-sniper e whitelist). Isso protege os primeiros holders, evita manipulações de preço e contribui para a construção de um mercado estável e confiável desde os primeiros blocos.
-            </p>
-        </section>
-
-        <section id="estrategia-marketing">
-            <header>Estratégia de marketing</header>
-            <p>
-                A estratégia de marketing para o <strong>Systal Coin</strong> pode abranger diversas frentes com o objetivo de ampliar a visibilidade do projeto, atrair novos usuários e fortalecer a confiança da comunidade. Entre as ações possíveis estão campanhas educativas sobre o funcionamento do token e seu ecossistema, parcerias com influenciadores e criadores de conteúdo, iniciativas de marketing de conteúdo, anúncios em plataformas segmentadas, participação em eventos e comunidades cripto, além de sistemas de recompensa baseados em engajamento e participação.
-            </p>
-            <p>
-                O foco está em informar, atrair e reter usuários de forma orgânica e ética, promovendo uma comunidade ativa, engajada e bem informada sobre o potencial e a proposta do projeto.
-            </p>
-        </section>
-
-        <section id="relatorios">
-            <header class="big">📊 Relatórios</header>
-            <p>
-                Durante os primeiros 24 meses do projeto, serão gerados e publicados relatórios mensais detalhados abordando todos os aspectos relevantes relacionados ao Systal Coin. Esses relatórios incluirão movimentações de carteiras, ações administrativas, campanhas de marketing, eventos de burn, e outras iniciativas que impactem o ecossistema.
-            </p>
-            <p>
-                Os documentos serão disponibilizados nos canais oficiais e redes sociais do projeto, garantindo acesso público e facilitando o acompanhamento contínuo da comunidade. Essa prática reforça o compromisso com a transparência, ética e respeito aos holders e participantes do ecossistema.
-            </p>
-        </section>
-
-
-        <section id="transparencia-carteiras">
-            <header>Transparência de carteiras</header>
-            <p>
-                Todas as carteiras oficiais vinculadas ao projeto — incluindo aquelas responsáveis por liquidez, equipe, marketing, recompensas e administração — são públicas e integram diretamente o contrato inteligente do Systal Coin.
-            </p>
-            <p>
-                Essas carteiras estão listadas de forma clara e acessível, com suas funções descritas na seção de <a href="#tokenomics">Tokenomics</a> e <a href="#percentuais-distribuicao">Distribuição</a>. Essa prática reforça o compromisso com a transparência, conformidade regulatória e segurança dos investidores, permitindo que qualquer holder acompanhe as movimentações on-chain e assegure que os fundos estão sendo utilizados conforme planejado.
-            </p>
-        </section>
-
-
-        <section id="links-uteis">
-            <header class="big">Links úteis</header>
-
-            <h4>Projeto</h4>
-            <ul>
-                <li><a href="https://github.com/seuusuario/Systal Coin" target="_blank">Site Oficial</a></li>
-                <li><a href="https://github.com/seuusuario/Systal Coin" target="_blank">GitHub do contrato</a></li>
-                <li><a href="https://github.com/seuusuario/Systal Coin" target="_blank">Whitepaper</a></li>
-            </ul>
-
-            <h4>Exploradores</h4>
-            <ul>
-                <li><a href="https://bscscan.com/token/0x..." target="_blank">BSCScan</a></li>
-                <li><a href="https://www.dextools.io/app/en/bnb/pair-explorer/0x..." target="_blank">Dextools</a></li>
-            </ul>
-
-            <h4>Redes sociais</h4>
-            <ul>
-                <li><a href="https://t.me/Systal Coin" target="_blank">Telegram Oficial</a></li>
-                <li><a href="https://twitter.com/Systal Coin" target="_blank">Twitter / X</a></li>
-                <li><a href="https://discord.gg/Systal Coin" target="_blank">Instagram</a></li>
-                <li><a href="https://discord.gg/Systal Coin" target="_blank">Facebook</a></li>
-                <li><a href="https://discord.gg/Systal Coin" target="_blank">Linkedin</a></li>
-            </ul>
-        </section>
-
-        <section>
-            <p>Documentation taken from the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction">MDN web docs - JavaScript Guide</a>.</p>
-        </section>
-    </main>
-
-</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="assets/script.js"></script>
+
 </html>
